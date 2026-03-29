@@ -1,0 +1,37 @@
+const int ledPin = LED_BUILTIN;   
+int unit = 200;                   
+
+void dot() {
+  digitalWrite(ledPin, HIGH);
+  delay(unit);          
+  digitalWrite(ledPin, LOW);
+  delay(unit);          
+}
+
+void dash() {
+  digitalWrite(ledPin, HIGH);
+  delay(3 * unit);      
+  digitalWrite(ledPin, LOW);
+  delay(unit);         
+}
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  
+  dot();
+  dot();
+  dot();
+
+  dash();
+  dash();
+  dash();
+
+  dot();
+  dot();
+  dot();
+
+  delay(500);
+}
