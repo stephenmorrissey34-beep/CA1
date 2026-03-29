@@ -1,0 +1,26 @@
+void setup() {
+  
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Initialize variables
+  int a = 10;
+  int b = 20;
+  int c = 30;
+
+  // Add a and b, store in d
+  int d = a + b;
+  Serial.print("Value of d (a + b): ");
+  Serial.println(d);
+
+  // Subtract c from d, store in e
+  int e = d - c;
+  Serial.print("Value of e (d - c): ");
+  Serial.println(e);
+
+  Serial.println("------");
+
+  // Wait for 1 second before repeating
+  delay(1000);
+}
