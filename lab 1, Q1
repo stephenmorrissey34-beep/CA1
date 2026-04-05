@@ -1,0 +1,55 @@
+/*fib series
+0 & 1 - same, nth term is sum of prev 2 numbers
+
+0, 1, 2, 3, 4, 5, 8, 13, .....*/
+
+int fib(int nth) {
+  if (nth == 0)
+    return 0;
+  else if (nth == 1)
+    return 1;
+  else
+    return (fib(nth - 1) + fib(nth - 2));
+}
+
+void fibRecv(int nterm) {
+  Serial.print("fibRecve: ");
+  for (int i = 0; i < nterm; i++) {
+    int res = fib(i);
+    Serial.print(res);
+    Serial.print(", ");
+  }
+  Serial.println("!");
+}
+
+void fibloops(int nterm) {
+  Serial.print("fibloops: ");
+
+  int term1 = 0;
+  int term2 = 1;
+
+  Serial.print("0, 1, ");
+
+  for (int i = 2; i < nterm; i++) {
+    int res = term1 + term2;
+    Serial.print(res);
+    Serial.print(", ");
+
+    term1 = term2;
+    term2 = res;
+  }
+
+  Serial.println("!");
+}
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Program start");
+  delay(100);
+  fibloops(10);
+  fibRecv(10);
+}
+
+void loop() {
+
+}
